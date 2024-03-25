@@ -11,6 +11,8 @@
 		1FDFB6BC2BAECF1000C1B9A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFB6BB2BAECF1000C1B9A9 /* ContentView.swift */; };
 		1FDFB6BE2BAECF1300C1B9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDFB6BD2BAECF1300C1B9A9 /* Assets.xcassets */; };
 		1FDFB6C12BAECF1300C1B9A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FDFB6C02BAECF1300C1B9A9 /* Preview Assets.xcassets */; };
+		1FDFB6C82BB14CC200C1B9A9 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFB6C72BB14CC200C1B9A9 /* AnnotationView.swift */; };
+		1FDFB6CA2BB14CDA00C1B9A9 /* CustomClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDFB6C92BB14CDA00C1B9A9 /* CustomClusterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		1FDFB6BB2BAECF1000C1B9A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1FDFB6BD2BAECF1300C1B9A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FDFB6C02BAECF1300C1B9A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1FDFB6C72BB14CC200C1B9A9 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
+		1FDFB6C92BB14CDA00C1B9A9 /* CustomClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomClusterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				1FDFB6B92BAECF1000C1B9A9 /* TestMapViewApp.swift */,
 				1FDFB6BB2BAECF1000C1B9A9 /* ContentView.swift */,
+				1FDFB6C72BB14CC200C1B9A9 /* AnnotationView.swift */,
+				1FDFB6C92BB14CDA00C1B9A9 /* CustomClusterView.swift */,
 				1FDFB6BD2BAECF1300C1B9A9 /* Assets.xcassets */,
 				1FDFB6BF2BAECF1300C1B9A9 /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FDFB6BC2BAECF1000C1B9A9 /* ContentView.swift in Sources */,
+				1FDFB6C82BB14CC200C1B9A9 /* AnnotationView.swift in Sources */,
+				1FDFB6CA2BB14CDA00C1B9A9 /* CustomClusterView.swift in Sources */,
 				1FDFB6BA2BAECF1000C1B9A9 /* TestMapViewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
