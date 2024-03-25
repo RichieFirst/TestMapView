@@ -59,7 +59,7 @@ struct MapView: UIViewRepresentable {
         view.mapType = .standard
         
         for points in forDisplay {
-            let annotation = LandmarkAnnotation(coordinate: points.coordinate)
+            let annotation = LandmarkAnnotation(coordinate: points.coordinate, color: points.color)
             view.addAnnotation(annotation)
         }
         
@@ -81,24 +81,31 @@ struct SampleData: Identifiable {
             latitude: latitude,
             longitude: longitude)
     }
+    let color: LandmarkColor
 }
 
 var data = [
-    SampleData(latitude: 43.70564024126748, longitude: 142.37968945214223),
-    SampleData(latitude: 43.81257464206404, longitude: 142.82112322464369),
-    SampleData(latitude: 43.38416585162576, longitude: 141.7252598737476),
-    SampleData(latitude: 45.29168643283501, longitude: 141.95286751470724),
-    SampleData(latitude: 45.49261392585982, longitude: 141.9343973160499),
-    SampleData(latitude: 44.69825427301145, longitude: 141.91227845284203)
+    SampleData(latitude: 43.70564024126748, longitude: 142.37968945214223, color: .green),
+    SampleData(latitude: 43.81257464206404, longitude: 142.82112322464369, color: .red),
+    SampleData(latitude: 43.38416585162576, longitude: 141.7252598737476, color: .green),
+    SampleData(latitude: 45.29168643283501, longitude: 141.95286751470724, color: .green),
+    SampleData(latitude: 45.49261392585982, longitude: 141.9343973160499, color: .green),
+    SampleData(latitude: 44.69825427301145, longitude: 141.91227845284203, color: .red)
 ]
 
+enum LandmarkColor {
+    case green, red
+}
 
 class LandmarkAnnotation: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
+    let color: LandmarkColor
     init(
-        coordinate: CLLocationCoordinate2D
+        coordinate: CLLocationCoordinate2D,
+        color: LandmarkColor
     ) {
         self.coordinate = coordinate
+        self.color = color
         super.init()
     }
 }
@@ -114,5 +121,6 @@ extension UIImage {
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView()
+            .ignoresSafeArea()
     }
 }
