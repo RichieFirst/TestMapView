@@ -44,6 +44,13 @@ struct MapView: UIViewRepresentable {
             return nil
         }
         
+        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+            print("yo x")
+        }
+        
+        func mapView(_ mapView: MKMapView, didSelect annotation: any MKAnnotation) {
+            print("yo y")
+        }
     }
     
     func makeCoordinator() -> Coordinator {
