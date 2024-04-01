@@ -7,7 +7,32 @@
 
 import Foundation
 import MapKit
+import UIKit
 
+class OutlinedLabel: UILabel {
+    var outlineWidth: CGFloat = 2
+    var outlineColor: UIColor = .white
+    
+    override func drawText(in rect: CGRect) {
+        let shadowOffset = self.shadowOffset
+        let textColor = self.textColor
+        
+        let c = UIGraphicsGetCurrentContext()
+        c?.setLineWidth(outlineWidth)
+        c?.setLineJoin(.round)
+        c?.setTextDrawingMode(.stroke)
+        self.textColor = outlineColor
+        super.drawText(in: rect)
+        
+        c?.setTextDrawingMode(.fill)
+        self.textColor = textColor
+        
+        self.shadowOffset = CGSize(width: 0, height: 0)
+        super.drawText(in: rect)
+        
+        self.shadowOffset = shadowOffset
+    }
+}
 
 class CustomClusterView: MKAnnotationView {
     static let reuseID = "CustomClusterAnnotationView"
@@ -27,21 +52,19 @@ class CustomClusterView: MKAnnotationView {
         collisionMode = .circle
         centerOffset = CGPoint(x: 0, y: -10)
         
-        // Initialize the label
-        label = UILabel()
+        label = OutlinedLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.textColor = .black // Customize as needed
-        label.font = UIFont.systemFont(ofSize: 12) // Customize as needed
-        label.layer.cornerRadius = 5 // Adjust as needed for rounded corners
-        label.layer.shadowColor = UIColor.white.cgColor
-        label.layer.shadowRadius = 3.0
-        label.layer.shadowOpacity = 1.0
-        label.layer.shadowOffset = CGSize(width: 0, height: 0)
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.layer.cornerRadius = 5
         label.layer.masksToBounds = false
         label.clipsToBounds = true
-
-
+        
+        // Customize the outline effect
+        (label as? OutlinedLabel)?.outlineWidth = 3 // Adjust the outline width
+        (label as? OutlinedLabel)?.outlineColor = .white // Set the outline color to white
+        
         addSubview(label)
         
         // Constraints to position the label below the image
