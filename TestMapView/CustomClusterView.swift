@@ -56,13 +56,13 @@ class CustomClusterView: MKAnnotationView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.boldSystemFont(ofSize: 12)
         label.layer.cornerRadius = 5
         label.layer.masksToBounds = false
         label.clipsToBounds = true
         
         // Customize the outline effect
-        (label as? OutlinedLabel)?.outlineWidth = 3 // Adjust the outline width
+        (label as? OutlinedLabel)?.outlineWidth = 4 // Adjust the outline width
         (label as? OutlinedLabel)?.outlineColor = .white // Set the outline color to white
         
         addSubview(label)
